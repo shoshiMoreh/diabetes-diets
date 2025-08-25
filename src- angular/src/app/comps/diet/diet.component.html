@@ -1,0 +1,195 @@
+<!-- <h1>ו-- הדיאטה שלך היא:</h1>
+<p>שלום לך לקוח נכבד, מקווים שנהנה אתה מחוויה נהדרת באתרינו הנכבד</p>
+<p></p>
+<p>לא כדאי לך, אתה תהיה ממש מסכן.....</p> -->
+<h1 *ngIf="this.du.d.chanceDiabetes">הסיכויים שלך הם: {{this.du.d.chanceDiabetes}}%</h1>
+<div class="mid">
+  <button *ngIf="this.du.fLogIn" [disabled]=this.f (click)="addDiet()" class="cool-button">לשליחת הפרטים למודל-></button>
+  <button *ngIf="this.du.fUpdate || this.du.fSignIn" [disabled]=this.f (click)="updateDiet()" class="cool-button">לדיאטה חוזרת....</button>
+  <button *ngIf="this.du.fSignIn" [disabled]=this.f (click)="getDiet()" class="cool-button">לצפייה בדיאטה שלך....</button>
+</div>
+<p *ngIf="this.du.d.id && this.du.d.chanceDiabetes < 50">ב"ה סיכוייך לחולת בסוכרת נמוכים, אנא המשך לשמור על בריאותך והקפד לבדוק כל תקופה אם ישתנו התוצאות!</p>
+<p *ngIf="this.du.d.id && this.du.d.chanceDiabetes < 50">רק בריאות!!</p>
+<!-- <div *ngIf="this.f" class="loader x"></div> -->
+<div *ngIf="this.f" class="container1 x1">
+  <div class="ball left"></div>
+  <div class="ball center"></div>
+  <div class="ball right"></div>
+</div>
+<div *ngIf="this.du.d.chanceDiabetes>50 && !this.f" style="margin: auto;">
+<div class="container">    <!-- *ngFor="let day of days" -->
+
+  <div class="flip-card"  (click)="toggleFlip(this.days[0])">
+    <div class="flip-card-inner" [class.flip]="this.days[0].isFlipped">
+      <div class="flip-card-front">
+        {{ this.days[0].nameHe }}
+      </div>
+      <div class="flip-card-back">
+        
+        <table class="table table-borderless" style="font-size: 13px; direction: rtl;">
+        <tr>
+          <td>שם המזון:</td>
+          <td>כמה גרמים?</td>
+        </tr>
+        <tbody *ngFor="let d of this.du.d.sunday">
+          <tr>
+            <td >{{d[0]}}</td>
+            <td>{{d[1]}}</td>
+          </tr>
+        </tbody>
+      </table> 
+      <p class="rot">{{ this.days[0].nameEn }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card"  (click)="toggleFlip(this.days[1])">
+    <div class="flip-card-inner" [class.flip]="this.days[1].isFlipped">
+      <div class="flip-card-front">
+        {{ this.days[1].nameHe }}
+      </div>
+      <div class="flip-card-back">
+        
+        <table class="table table-borderless" style="font-size: 13px; direction: rtl;">
+        <tr>
+          <td>שם המזון:</td>
+          <td>כמה גרמים?</td>
+        </tr>
+        <tbody *ngFor="let d of this.du.d.monday">
+          <tr>
+            <td >{{d[0]}}</td>
+            <td>{{d[1]}}</td>
+          </tr>
+        </tbody>
+      </table> 
+      <p class="rot">{{ this.days[1].nameEn }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card"  (click)="toggleFlip(this.days[2])">
+    <div class="flip-card-inner" [class.flip]="this.days[2].isFlipped">
+      <div class="flip-card-front">
+        {{ this.days[2].nameHe }}
+      </div>
+      <div class="flip-card-back">
+        
+        <table class="table table-borderless" style="font-size: 13px; direction: rtl;">
+        <tr>
+          <td>שם המזון:</td>
+          <td>כמה גרמים?</td>
+        </tr>
+        <tbody *ngFor="let d of this.du.d.tuesday">
+          <tr>
+            <td >{{d[0]}}</td>
+            <td>{{d[1]}}</td>
+          </tr>
+        </tbody>
+      </table> 
+      <p class="rot">{{ this.days[2].nameEn }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card"  (click)="toggleFlip(this.days[3])">
+    <div class="flip-card-inner" [class.flip]="this.days[3].isFlipped">
+      <div class="flip-card-front">
+        {{ this.days[3].nameHe }}
+      </div>
+      <div class="flip-card-back">
+        
+        <table class="table table-borderless" style="font-size: 13px; direction: rtl;">
+        <tr>
+          <td>שם המזון:</td>
+          <td>כמה גרמים?</td>
+        </tr>
+        <tbody *ngFor="let d of this.du.d.wednesday">
+          <tr>
+            <td >{{d[0]}}</td>
+            <td>{{d[1]}}</td>
+          </tr>
+        </tbody>
+      </table> 
+      <p class="rot">{{ this.days[3].nameEn }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card"  (click)="toggleFlip(this.days[4])">
+    <div class="flip-card-inner" [class.flip]="this.days[4].isFlipped">
+      <div class="flip-card-front">
+        {{ this.days[4].nameHe }}
+      </div>
+      <div class="flip-card-back">
+        
+        <table class="table table-borderless" style="font-size: 13px; direction: rtl;">
+        <tr>
+          <td>שם המזון:</td>
+          <td>כמה גרמים?</td>
+        </tr>
+        <tbody *ngFor="let d of this.du.d.friday">
+          <tr>
+            <td >{{d[0]}}</td>
+            <td>{{d[1]}}</td>
+          </tr>
+        </tbody>
+      </table> 
+      <p class="rot">{{ this.days[4].nameEn }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card"  (click)="toggleFlip(this.days[5])">
+    <div class="flip-card-inner" [class.flip]="this.days[5].isFlipped">
+      <div class="flip-card-front">
+        {{ this.days[5].nameHe }}
+      </div>
+      <div class="flip-card-back">
+        
+        <table class="table table-borderless" style="font-size: 13px; direction: rtl;">
+        <tr>
+          <td>שם המזון:</td>
+          <td>כמה גרמים?</td>
+        </tr>
+        <tbody *ngFor="let d of this.du.d.saturday">
+          <tr>
+            <td >{{d[0]}}</td>
+            <td>{{d[1]}}</td>
+          </tr>
+        </tbody>
+      </table> 
+      <p class="rot">{{ this.days[5].nameEn }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card"  (click)="toggleFlip(this.days[6])">
+    <div class="flip-card-inner" [class.flip]="this.days[6].isFlipped">
+      <div class="flip-card-front">
+        {{ this.days[6].nameHe }}
+      </div>
+      <div class="flip-card-back">
+        
+        <table class="table table-borderless" style="font-size: 13px; direction: rtl;">
+        <tr>
+          <td>שם המזון:</td>
+          <td>כמה גרמים?</td>
+        </tr>
+        <tbody *ngFor="let d of this.du.d.sunday">
+          <tr>
+            <td >{{d[0]}}</td>
+            <td>{{d[1]}}</td>
+          </tr>
+        </tbody>
+      </table> 
+      <p class="rot">{{ this.days[6].nameEn }}</p>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<p style="direction: rtl; text-align: center;">הדיאטה לא מוצאת חן בעיניך? מעוניין בתפריט אחר?</p>
+<button style="direction: rtl; margin: auto; margin-bottom: 30px;" (click)="updateDiet()" class="cool-button">לדיאטה חוזרת....</button>
+</div>
+
+

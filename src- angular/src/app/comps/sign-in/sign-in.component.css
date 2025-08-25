@@ -1,0 +1,90 @@
+.form-control.text-end::placeholder {
+    text-align: right;
+}
+label{
+    direction: rtl;
+    text-align: right;
+}
+form{
+    width: 400px;
+    margin: auto;
+    margin-top: 30px;
+    background-color: rgba(255, 255, 255, 0.3);
+    text-align: right;
+    border-radius: 20px;
+    animation: 1s descend forwards;
+}
+@keyframes descend
+{
+  0% {opacity: 0;}
+  100% {opacity: 1}
+}
+input{
+    background-color: rgba(255, 255, 255, 0.2);
+    direction: rtl;
+    text-align: right;
+}
+input:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+}
+input:active{
+    background-color: rgba(255, 255, 255, 0.3);
+}
+input:focus{
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+*{
+    direction: rtl;
+}
+h2{
+  text-align: center;
+}
+
+
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  input[type="text"],
+  input[type="email"]{
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    /* background-color: rgba(255, 255, 255, 0.1); */
+    padding: 8px 16px;
+    cursor: pointer;
+    direction: rtl;
+    text-align: center;
+    margin: 20px;
+  }
+  
+  button[type="submit"] {
+    background-color: #4c91af;
+    color: white;
+    border: none;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #4c91af;
+  }
+  
+  button[type="button"] {
+    /* background-color: rgba(255, 255, 255, 0.2); */
+    color: #555;
+    border: none;
+  }
+  
+  button[type="button"]:hover {
+    background-color: #bbb;
+  }

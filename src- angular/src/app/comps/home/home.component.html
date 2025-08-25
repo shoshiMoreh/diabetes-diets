@@ -1,0 +1,47 @@
+<div>
+<nav>
+    <ul class="nav nav-tabs"><img src="../../../assets/pic/חדש.png">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['./about']" routerLinkActive="active">אודות</a>
+      </li>
+      <li class="nav-item" *ngIf="!du.u.id">
+        <a class="nav-link" [routerLink]="['./signIn']" routerLinkActive="active">כניסה</a>
+      </li>
+      <li class="nav-item" *ngIf="!du.u.id">
+        <a class="nav-link" [routerLink]="['./logIn']" routerLinkActive="active">הרשמה</a>
+      </li>
+      <li class="nav-item" *ngIf="du.u.id">
+        <a class="nav-link" [routerLink]="['./diet']" routerLinkActive="active">דיאטה מותאמת אישית</a>
+      </li>
+      <li class="nav-item" *ngIf="du.u.id">
+        <a class="nav-link" [routerLink]="['./updateDetails']" routerLinkActive="active">הנתונים שלי</a>
+      </li>
+      <!-- <li class="nav-item" *ngIf="userS.u.UserCode">
+        <a class="nav-link" [routerLink]="['./dietUser']" routerLinkActive="active">הדיאטה שלי</a>
+      </li> -->
+    </ul>
+  </nav></div>
+  
+  <div>
+    <p *ngIf="du.u.id">שלום {{du.u.name}}</p>
+    <!-- <p *ngIf="!du.u.id">שלום אורח</p> -->
+  </div>
+  <div *ngIf="du.flagCnisa">
+  <p style="direction: rtl;">ברוכים הבאים!</p>
+  <div class="cnisa">
+    <ul>
+      <li>
+        <a class="item3" [routerLink]="['./about']" routerLinkActive="active">אודות</a>
+      </li>
+      <li>
+        <a class="item2" [routerLink]="['./signIn']" routerLinkActive="active">כניסה</a>
+      </li>
+      <li>
+        <a class="item1" [routerLink]="['./logIn']" routerLinkActive="active">הרשמה</a>
+      </li>
+      </ul>
+  </div></div>
+  <router-outlet></router-outlet>
+
+<button (click)="rload()" *ngIf="this.du.u.id" class="cool-button d">ליציאה</button>
+  

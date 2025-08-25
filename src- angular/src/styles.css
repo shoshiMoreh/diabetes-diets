@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    /* direction: rtl; */
+    background-image: url('assets/pic/pic1.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    background-size: 100%;
+}

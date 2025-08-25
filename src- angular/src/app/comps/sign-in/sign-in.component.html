@@ -1,0 +1,27 @@
+<form class="rib" id="multi-step-form" (ngSubmit)="GetUserByMailAndPassword()" #formG="ngForm">
+    <h2>כניסה</h2>
+        <!-- מייל -->
+        <div class="form-floating mb-3 mt-3"> 
+          <input type="Email" class="form-control" id="Email" placeholder="מייל" name="Email"
+          #inp3="ngModel" [(ngModel)]="this.mail" required email 
+          [ngStyle]="{'border': inp3.invalid && (inp3.touched || inp3.dirty) ? '2px solid red' : ''}">
+          <label for="Email">מייל</label>
+          <div *ngIf="inp3.invalid && (inp3.touched || inp3.dirty)">
+              <p *ngIf="inp3.errors!['required']">שדה חובה</p>           
+              <!-- <p *ngIf="inp3.errors!['pattern']">מייל לא תקין</p> -->
+              <p *ngIf="inp3.errors!['email']">מייל לא תקין</p>
+          </div>
+        </div>
+        <!-- סיסמא -->
+        <div class="form-floating mb-3 mt-3">
+          <input type="password" class="form-control" id="LoginPassword" placeholder="סיסמא" name="LoginPassword"
+          #inp4="ngModel" [(ngModel)]="this.pass" required minlength="7"
+          [ngStyle]="{'border': inp4.invalid && (inp4.touched || inp4.dirty) ? '2px solid red' : ''}">
+          <label for="LoginPassword">סיסמא</label>
+          <div *ngIf="inp4.invalid && (inp4.touched || inp4.dirty)">
+              <p *ngIf="inp4.errors!['required']">שדה חובה</p>
+              <p *ngIf="inp4.errors!['minlength']">סיסמא חלשה</p>
+          </div>
+        </div>
+    <div class="submit"><button type="submit" class="btn btn-primary mb-2" [disabled]=!formG.valid>שלח</button></div>       
+  </form>    

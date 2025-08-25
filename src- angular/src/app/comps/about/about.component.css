@@ -1,0 +1,52 @@
+body{
+    direction: rtl;
+    text-align: center;
+}
+h1{
+    font-weight: bolder;
+    direction: rtl;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+}
+p{
+    direction: rtl;
+    font-weight: bold;
+    color: black;
+    font-size: 13px;
+    text-align: center;
+}
+h3{
+    font-size: 18px;
+}
+ div{
+    margin: auto;
+    direction: rtl;
+    text-align: center;
+    animation: 3s descend forwards;
+    width: 750px;
+    height: 750px;
+    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.3);
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 100px;
+    box-sizing: border-box;
+    font-size: 16px; /* Adjust font size as needed */
+    line-height: 1.2;
+    border-radius: 50%;
+ }
+ /* @keyframes descend
+{
+            0% {opacity: 0;}
+            100% {opacity: 1}
+} */
+@keyframes descend {
+    0% {opacity: 0;}
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
